@@ -6,7 +6,7 @@
    $rows = $applications->find();
 
    foreach ($rows as $row) {
-      echo $document["lastname"] . "\n";
+      echo $row["lastname"] . "\n";
    }
 
   
