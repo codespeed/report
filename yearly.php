@@ -3,15 +3,15 @@
 
   require('fpdf/fpdf.php');
 
-
+    $mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
+   $db = $mlab->eproseso;
+   $healthcards = $db->healthcards;
  
 
    $report_title = "Report";
     $items=  array();
    if(isset($_GET['y'])){	
-      $mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
-   $db = $mlab->eproseso;
-   $healthcards = $db->healthcards;
+     
     $rows = $healthcards->find(array("y"=>$_GET['y']));
     $report_title = "Yearly Report (".$_GET['y'].")";
       
