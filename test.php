@@ -10,9 +10,16 @@
 
    $report_title = "Report";
     $items=  array();
-    if(isset($_GET["y"])){
+
+    if(isset($_GET["d"])){
+      $rows = $healthcards->find(array("d"=>$_GET["d"]));
+      $report_title = "Daily Report (".$d[0]." ".$d[1].", ".$d[2].")";
+    } else if(isset($_GET["y"])){
       $rows = $healthcards->find(array("y"=>(int)$_GET["y"]));
        $report_title = "Yearly Report (".$_GET['y'].")";
+    }else if(isset($_GET['m']) && isset($_GET['y']){
+      $rows = $healthcards->find(array("d"=>$_GET['d'],"m"=>$_GET['m']));
+      $report_title = "Monthly Report (".$_GET['m']." ".$_GET['y'].")";
     }
     
     
