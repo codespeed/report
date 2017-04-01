@@ -14,7 +14,8 @@
   
     if(isset($_GET["d"])){
       $rows = $healthcards->find(array("d"=>(string)$_GET["d"]));
-       $report_title = "Daily Report (".$_GET['d'].")";
+      $d = explode("-", $_GET['d']);
+       $report_title = "Daily Report (".$d[0]." ".$d[1].", ".$d[2].")";
     }
 
     
