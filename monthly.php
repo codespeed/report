@@ -169,7 +169,6 @@ $pdf->Ln(3);
 
 $pdf->SetTextColor(0);
 $pdf->Cell(5, 8, 'Total Records: '.count($items), 0, 0, 'L', true);
-$pdf->SetFont('','B');
 $pdf->SetTextColor(0,115,183);
 $pdf->Ln(15);
 
