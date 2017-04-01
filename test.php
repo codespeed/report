@@ -9,14 +9,15 @@
    $report_title = "Report";
     $items=  array();
     $rows = $healthcards->find();
-
-    //print_r($rows);
+    $rows2 = iterator_to_array($rows);
+    
+    print_r($rows2);
    // echo "-=-------------------";
 
-    foreach ($rows as $row) {
+    /*foreach ($rows as $row) {
          //$new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
         //array_push($items,$new_row);  
       echo $row['hc_lastname'];
-     }
+     }*/
 
 ?>
