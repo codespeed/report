@@ -3,27 +3,28 @@
 
   require('fpdf/fpdf.php');
 
-    $mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
+   $mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
    $db = $mlab->eproseso;
    $healthcards = $db->healthcards;
  
 
    $report_title = "Report";
     $items=  array();
-   if(isset($_GET['y'])){	
-     
-    //$rows = $healthcards->find(array("y"=>(int)$_GET['y']));
-    $rows = $healthcards->find();
-    $report_title = "Yearly Report (".$_GET['y'].")";
+
+  
+    if(isset($_GET["y"])){
+      $rows = $healthcards->find(array("y"=>(int)$_GET["y"]));
+       $report_title = "Yearly Report (".$_GET['y'].")";
     }
 
-    print_r($rows);
+    
 
-   /* foreach ($rows as $row) {
-         $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
+  $rows2 = iterator_to_array($rows);
+    foreach ($rows2 as $key => $row) {
+        $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
         array_push($items,$new_row);  
-     }*/
-   
+     }
+
 
 class PrintPDF extends FPDF {
 
@@ -88,10 +89,10 @@ function Header()
                     $this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
                 }else if($i==3){
                     $this->SetTextColor(0);
-                	$this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
+                  $this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
                 }else if($i==4){
                    $this->SetTextColor(0);
-                	$this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
+                  $this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
                 }
                 $i++;
             }
@@ -137,10 +138,10 @@ $pdf->AddPage();
 
 
 /*$rows = array(
-		array("n","	17-04631001-1","jp","jc","be"),
-		array("n","	17-04631001-1","jp","jc","be"),
-		array("n","	17-04631001-1","jp","jc","be")
-		);
+    array("n"," 17-04631001-1","jp","jc","be"),
+    array("n"," 17-04631001-1","jp","jc","be"),
+    array("n"," 17-04631001-1","jp","jc","be")
+    );
 */
 
 $pdf->SetFont('','',13);
@@ -166,9 +167,6 @@ $pdf->Ln(8);
 
 
 $pdf->SetTitle($report_title,false);
-//$pdf->Output();
-  
-
-
+$pdf->Output();
 
 ?>
