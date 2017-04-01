@@ -14,13 +14,14 @@
      
     $rows = $healthcards->find(array("y"=>$_GET['y']));
     $report_title = "Yearly Report (".$_GET['y'].")";
-      
-      foreach ($rows as $row) {
+    }
+
+    print_r($rows);
+
+    foreach ($rows as $row) {
          $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
         array_push($items,$new_row);  
      }
-
-   }
    
 
 class PrintPDF extends FPDF {
