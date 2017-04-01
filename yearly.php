@@ -36,17 +36,19 @@ function Header()
 
 
     $this->SetFont('Arial','',11);
-    //$this->Cell(80);
+    $this->Cell(80);
     $this->Cell(100,10, "Republic  of the Philippines",0,0,'C');
-    $this->Ln(5);
+    $this->Ln(8);
 
     $this->SetFont('Arial','',15);
+    $this->Cell(80);
     $this->Cell(100,10, "City Health Office",0,0,'C');
-    $this->Ln(5);
+    $this->Ln(8);
 
-     $this->SetFont('Arial','',15);
+
      $this->SetFillColor(0);
      $this->SetFont('Arial','',11);
+     $this->Cell(80);
     $this->Cell(100,10, "Davao City",0,0,'C');
     // Line break
     $this->Ln(15);
