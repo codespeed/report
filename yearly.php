@@ -21,7 +21,7 @@
 
   $rows2 = iterator_to_array($rows);
     foreach ($rows2 as $key => $row) {
-        $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
+        $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hid'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
         array_push($items,$new_row);  
      }
 
