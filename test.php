@@ -19,8 +19,8 @@
          //$new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
         //array_push($items,$new_row);  
         foreach ($val as $key2 => $val2) {
-          echo $val2['hc_lastname'];
-          
+            print_r($val2);
+
         }
      }
 
