@@ -13,7 +13,7 @@
 
   
     if(isset($_GET["d"])){
-      $rows = $healthcards->find(array("d"=>(string)$_GET["d"]));
+      $rows = $healthcards->find(array("y"=>(int)$_GET["d"]));
        $report_title = "Daily Report (".$_GET['d'].")";
     }
 
