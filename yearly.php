@@ -4,29 +4,24 @@
   require('fpdf/fpdf.php');
 
 
-   $mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
-   $db = $mlab->eproseso;
-   $healthcards = $db->healthcards;
+ 
 
    $report_title = "Report";
     $items=  array();
-   if(isset($_GET['d']) && !isset($_GET['m']) && !isset($_GET['y'])){
-     $rows = $healthcards->find(array("d"=>$_GET['d']));
-   	$d = explode("-", $_GET['d']);
-   	$report_title = "Daily Report (".$d[0]." ".$d[1].", ".$d[2].")";
-   }
-   if(isset($_GET['m']) && isset($_GET['y']) && !isset($_GET['d'])){
-    $rows = $healthcards->find(array("d"=>$_GET['d'],"m"=>$_GET['m']));
-    $report_title = "Monthly Report (".$_GET['m']." ".$_GET['y'].")";
-   }
-   if(isset($_GET['y']) && !isset($_GET['m'])){	
+   if(isset($_GET['y'])){	
+      $mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
+   $db = $mlab->eproseso;
+   $healthcards = $db->healthcards;
     $rows = $healthcards->find(array("y"=>$_GET['y']));
     $report_title = "Yearly Report (".$_GET['y'].")";
+      
+      foreach ($rows as $row) {
+         $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
+        array_push($items,$new_row);  
+     }
+     
    }
-   foreach ($rows as $row) {
-       $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
-   		array_push($items,$new_row);	
-   }
+   
 
 class PrintPDF extends FPDF {
 
