@@ -12,7 +12,7 @@
     $items=  array();
    if(isset($_GET['y'])){	
      
-    $rows = $healthcards->find(array("y"=>$_GET['y']));
+    $rows = $healthcards->find(array("y"=>(int)$_GET['y']));
     $report_title = "Yearly Report (".$_GET['y'].")";
     }
 
