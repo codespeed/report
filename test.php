@@ -10,7 +10,7 @@
    echo $_GET["y"];
    echo "<br>-------------------------<br>";
     $items=  array();
-    $rows = $healthcards->find(array("y"=>$_GET["y"]));
+    $rows = $healthcards->find(array("y"=>"2017"));
     $rows2 = iterator_to_array($rows);
 
    // echo "-=-------------------";
