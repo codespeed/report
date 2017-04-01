@@ -4,10 +4,10 @@
   require('fpdf/fpdf.php');
 
 
-   /*$mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
+   $mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
    $db = $mlab->eproseso;
    $healthcards = $db->healthcards;
-*/
+
 
   
    $report_title = "Report";
@@ -25,12 +25,12 @@
     //$rows = $healthcards->find(array("y"=>$_GET['y']));
     $report_title = "Yearly Report (".$_GET['y'].")";
    }
-  /* foreach ($rows as $row) {
+   foreach ($rows as $row) {
        $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
    		array_push($items,$new_row);	
-   }*/
+   }
 
-   $rows = array();
+/*   $rows = array();
    $row1 = array("hc_lastname"=>"Maghanoy","hc_firstname"=>"Ellaiza", "hc_position"=>"Programmer", "hc_job_category"=>"fgsdfsd", "hc_business_employment"=>"gtfgdgfdgfd");
    $row2 = array("hc_lastname"=>"dasdsa","hc_firstname"=>"dasdsa", "hc_position"=>"Web master", "hc_job_category"=>"fdsfds", "hc_business_employment"=>"gtfgdgfdgfd");
    //array_push($rows,$row);
@@ -38,7 +38,7 @@
    $arr1 = array($row1['hc_lastname'],$row1['hc_firstname'],$row1['hc_position'],$row1['hc_job_category'],$row1['hc_business_employment']);
    array_push($items,$arr1);
   $arr2 = array($row2['hc_lastname'],$row2['hc_firstname'],$row2['hc_position'],$row2['hc_job_category'],$row2['hc_business_employment']);
-   array_push($items,$arr2);
+   array_push($items,$arr2);*/
 
 
 class PrintPDF extends FPDF {
