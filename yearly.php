@@ -17,9 +17,23 @@
        $report_title = "Yearly Report (".$_GET['y'].")";
     }
 
-    
+    function aasort (&$array, $key) {
+        $sorter=array();
+        $ret=array();
+        reset($array);
+        foreach ($array as $ii => $va) {
+            $sorter[$ii]=$va[$key];
+        }
+        asort($sorter);
+        foreach ($sorter as $ii => $va) {
+            $ret[$ii]=$array[$ii];
+        }
+        $array=$ret;
+    }
+
 
   $rows2 = iterator_to_array($rows);
+  aasort($rows2,"hc_lastname");
     foreach ($rows2 as $key => $row) {
         $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hid'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
         array_push($items,$new_row);  
