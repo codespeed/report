@@ -8,7 +8,7 @@
 
    $report_title = "Report";
     $items=  array();
-    $rows = $healthcards->find()->toArray();
+    $rows = $healthcards->find();
 
     //print_r($rows);
    // echo "-=-------------------";
