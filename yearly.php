@@ -186,6 +186,18 @@ $pdf->SetFont('','B');
 $pdf->SetTextColor(0,115,183);
 $pdf->Ln(8);
 
+$pdf->SetTextColor(0);
+$pdf->Cell(90, 8, 'Josephine J. Villafuerte, MD, MCH', 0, 0, 'L', true);
+$pdf->SetFont('','B');
+$pdf->SetTextColor(0,115,183);
+$pdf->Ln(8);
+
+$pdf->SetTextColor(0);
+$pdf->Cell(90, 8, 'City Health Officer', 0, 0, 'L', true);
+$pdf->SetFont('','B');
+$pdf->SetTextColor(0,115,183);
+$pdf->Ln(8);
+
 
 $pdf->SetTitle($report_title,false);
 $pdf->Output();
