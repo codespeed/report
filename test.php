@@ -8,7 +8,7 @@
 
    $report_title = "Report";
     $items=  array();
-    $rows = $healthcards->find();
+    $rows = $healthcards->find(array("y"=>$_GET["y"]));
     $rows2 = iterator_to_array($rows);
 
    // echo "-=-------------------";
