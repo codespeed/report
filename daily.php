@@ -152,19 +152,14 @@ $pdf->Ln(10);
 
 $pdf->CreateTable($header,$items);
 
-/*$pdf->Ln(5);
+$pdf->Ln(3);
 
 $pdf->SetTextColor(0);
-$pdf->Cell(50, 8, '', 0, 0, 'L', true);
-$pdf->Cell(40, 8, '', 0, 0, 'L', true);
-$pdf->Cell(50, 8, 'Total Sale Amount: ', 0, 0, 'L', true);
+$pdf->Cell(5, 8, 'Total Records: '.count($items), 0, 0, 'L', true);
 $pdf->SetFont('','B');
 $pdf->SetTextColor(0,115,183);
-$pdf->Cell(50, 8,number_format($total_sales,2), 0, 0, 'L', true);
-$pdf->SetFont('','');
-$pdf->SetTextColor(0);
 $pdf->Ln(8);
-*/
+
 
 
 $pdf->SetTitle($report_title,false);
