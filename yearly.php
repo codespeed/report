@@ -33,14 +33,27 @@ function Header()
 {
     // Logo
     //$this->Image('images/logo-eh.png',55,6,18);
-    // Arial bold 15
-    $this->SetFont('Arial','',15);
-    // Move to the right
+
+
+    $this->SetFont('Arial','',11);
     $this->Cell(80);
-    // Title
-    $this->Cell(22,10, "Eproseso",0,0,'L');
+    $this->Cell(22,10, "Republic  of the Philippines",0,0,'L');
+    $this->Ln(5);
+
+    $this->SetFont('Arial','',15);
+    $this->Cell(80);
+    $this->Cell(22,10, "City Health Office",0,0,'L');
+    $this->Ln(5);
+
+     $this->SetFont('Arial','',15);
+     $this->SetFillColor(0);
+     $this->SetFont('Arial','',11);
+    $this->Cell(80);
+    $this->Cell(22,10, "Davao City",0,0,'L');
     // Line break
     $this->Ln(10);
+
+
 
   /*   $this->SetFont('Arial','',8);
     $this->Cell(80);
