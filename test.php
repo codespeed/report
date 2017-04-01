@@ -10,8 +10,8 @@
     $items=  array();
     $rows = $healthcards->find()->toArray();
 
-    print_r($rows);
-    echo "-=-------------------";
+    //print_r($rows);
+   // echo "-=-------------------";
 
     foreach ($rows as $row) {
          //$new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hc_firstname'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
