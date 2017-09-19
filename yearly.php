@@ -1,5 +1,5 @@
 <?php
-  header('X-Frame-Options: EPROSESO');
+  //header('X-Frame-Options: EPROSESO');
 
   require('fpdf/fpdf.php');
 
