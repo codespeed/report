@@ -1,1 +1,3 @@
-echo "hello po";
+<?php
+  phpinfo ();
+ ?>
