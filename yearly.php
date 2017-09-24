@@ -35,7 +35,7 @@
   $rows2 = iterator_to_array($rows);
   aasort($rows2,"hc_lastname");
     foreach ($rows2 as $key => $row) {
-        $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hid'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
+        $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hid'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment'],$row['d']);
         array_push($items,$new_row);  
      }
 
@@ -152,6 +152,7 @@ $header = array(
              array('Job Position',   30),
              array('Job Category', 30),
              array('Business Employment', 55),
+            array('Date Approved', 30)
           );
 // Get data
 
