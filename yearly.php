@@ -74,10 +74,6 @@ function Header()
     $this->Cell(18,10,'Toril, Davao City',0,0,'C');
     $this->Ln(12);*/
 
-    
-
-
-
 }
 
     // Create basic table
