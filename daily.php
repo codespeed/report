@@ -3,7 +3,8 @@
 
   require('fpdf/fpdf.php');
 
-   $mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
+   //$mlab = new MongoClient("mongodb://eproseso:eproseso@ds059682.mlab.com:59682/eproseso");
+$mlab = new MongoClient("mongodb://eprosesso:eprosesso2017@ds147274.mlab.com:47274/eproseso");
    $db = $mlab->eproseso;
    $healthcards = $db->healthcards;
  
