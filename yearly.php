@@ -116,6 +116,9 @@ function Header()
                 }else if($i==4){
                    $this->SetTextColor(0);
                   $this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
+                }else if($i==5){
+                   $this->SetTextColor(0);
+                  $this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
                 }
                 $i++;
             }
