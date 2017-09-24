@@ -144,11 +144,11 @@ function Footer()
 // Column headings
 $header = array(
              array('Name', 40), 
-             array('HealthCard ID', 30), 
-             array('Job Position',   30),
+             array('HealthCard ID', 25), 
+             array('Job Position',   25),
              array('Job Category', 30),
-             array('Business Employment', 30),
-            array('Date Approved', 20)
+             array('Business Employment', 35),
+            array('Date Approved', 25)
           );
 // Get data
 
