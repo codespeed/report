@@ -12,12 +12,12 @@
     $items=  array();
 
   
-    if(isset($_GET["y"]) && isset($_GET["y"])){
+     if(isset($_GET["y"]) && isset($_GET["y"])){
       $rows = $healthcards->find(array("m"=>(string)$_GET["m"], "y"=>(int)$_GET["y"]));
        $report_title = "Monthly Report (".$_GET['m']." ".$_GET['y'].")";
     }
 
-       function aasort (&$array, $key) {
+    function aasort (&$array, $key) {
         $sorter=array();
         $ret=array();
         reset($array);
@@ -30,12 +30,12 @@
         }
         $array=$ret;
     }
-    
+
 
   $rows2 = iterator_to_array($rows);
   aasort($rows2,"hc_lastname");
     foreach ($rows2 as $key => $row) {
-        $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hid'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment']);
+        $new_row = array($row['hc_lastname'].", ".$row['hc_firstname'],$row['hid'],$row['hc_position'],$row['hc_job_category'],$row['hc_business_employment'],$row['d']);
         array_push($items,$new_row);  
      }
 
@@ -47,23 +47,32 @@ function Header()
 {
     // Logo
     //$this->Image('images/logo-eh.png',55,6,18);
-    // Arial bold 15
+
+
+    $this->SetFont('Arial','',11);
+    $this->Cell(43);
+    $this->Cell(100,10, "Republic  of the Philippines",0,0,'C');
+    $this->Ln(6);
+
     $this->SetFont('Arial','',15);
-    // Move to the right
-    $this->Cell(80);
-    // Title
-    $this->Cell(22,10, "Eproseso",0,0,'L');
+    $this->Cell(43);
+    $this->Cell(100,10, "City Health Office",0,0,'C');
+    $this->Ln(6);
+
+
+     $this->SetFillColor(0);
+     $this->SetFont('Arial','',11);
+     $this->Cell(43);
+    $this->Cell(100,10, "Davao City",0,0,'C');
     // Line break
-    $this->Ln(10);
+    $this->Ln(15);
+
+
 
   /*   $this->SetFont('Arial','',8);
     $this->Cell(80);
     $this->Cell(18,10,'Toril, Davao City',0,0,'C');
     $this->Ln(12);*/
-
-    
-
-
 
 }
 
@@ -107,6 +116,9 @@ function Header()
                 }else if($i==4){
                    $this->SetTextColor(0);
                   $this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
+                }else if($i==5){
+                   $this->SetTextColor(0);
+                  $this->Cell($header[$i][1], 8, ' '.$field, 1, 0, 'L', true);
                 }
                 $i++;
             }
@@ -134,11 +146,12 @@ function Footer()
 
 // Column headings
 $header = array(
-             array('Name', 45), 
-             array('HealthCard ID', 30), 
-             array('Job Position',   30),
+             array('Name', 40), 
+             array('HealthCard ID', 25), 
+             array('Job Position',   25),
              array('Job Category', 30),
-             array('Business Employment', 55),
+             array('Business Employment', 35),
+            array('Date Approved', 25)
           );
 // Get data
 
@@ -181,7 +194,6 @@ $pdf->SetTextColor(0);
 $pdf->Cell(90, 8, 'City Health Officer', 0, 0, 'L', true);
 $pdf->SetTextColor(0,115,183);
 $pdf->Ln(8);
-
 
 
 
